@@ -237,7 +237,7 @@ class dbtLoom(dbtPlugin):
         """Read the dbt-loom configuration file."""
         if not path.exists():
             fire_event(
-                msg=f"dbt-loom: manifest file `{path}` not exists"
+                msg=f"dbt-loom: config file `{path}` not exists"
             )
             return None
 
