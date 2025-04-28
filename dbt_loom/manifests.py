@@ -53,6 +53,7 @@ class ManifestNode(BaseModel):
     depends_on: Optional[DependsOn] = None
     depends_on_nodes: List[str] = Field(default_factory=list)
     enabled: bool = True
+    description: Optional[str] = ""
 
     @validator("depends_on_nodes", always=True)
     def default_depends_on_nodes(cls, v, values):
