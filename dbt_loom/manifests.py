@@ -25,6 +25,7 @@ from dbt_loom.config import (
     ManifestReference,
     ManifestReferenceType,
 )
+from dbt.artifacts.resources.v1.components import ColumnInfo
 
 
 class DependsOn(BaseModel):
@@ -54,6 +55,7 @@ class ManifestNode(BaseModel):
     depends_on_nodes: List[str] = Field(default_factory=list)
     enabled: bool = True
     description: Optional[str] = ""
+    columns: Dict[str, ColumnInfo] = Field(default_factory=dict)
 
     @validator("depends_on_nodes", always=True)
     def default_depends_on_nodes(cls, v, values):
