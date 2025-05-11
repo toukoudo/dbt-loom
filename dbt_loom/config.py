@@ -56,6 +56,7 @@ class ManifestReference(BaseModel):
         AzureReferenceConfig,
     ]
     excluded_packages: List[str] = Field(default_factory=list)
+    optional: bool = False
 
 
 class dbtLoomConfig(BaseModel):
